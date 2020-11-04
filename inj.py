@@ -4,6 +4,7 @@
 #pip install captcha
 
 import discord
+import os
 from captcha.image import ImageCaptcha
 import random
 import time
@@ -62,6 +63,7 @@ async def on_message(message):
             await message.channel.send(embed=tlfvoEmbed)
             print(f'{message.author} 님이 잘못된 숫자로 인해 인증을 실패함.')
 
-client.run('NzcyMzA1MDc2MzU3NjkzNDYw.X54vJg._KmYqmi7p_EH7vv7BfY5lEnwEA4')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
 
 
